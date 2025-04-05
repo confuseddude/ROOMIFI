@@ -1,4 +1,3 @@
-
 import React from "react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,7 +13,8 @@ import {
   Save, 
   Sun, 
   User, 
-  UserCircle
+  UserCircle,
+  Monitor
 } from "lucide-react";
 import {
   Select,
@@ -29,8 +29,11 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
+import { useTheme } from "@/components/theme/ThemeProvider";
 
 const SettingsPage = () => {
+  const { theme, setTheme } = useTheme();
+
   return (
     <MainLayout title="Settings">
       <div className="space-y-6">
@@ -245,16 +248,34 @@ const SettingsPage = () => {
               <CardContent className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <Label htmlFor="theme-toggle" className="text-base">Dark Mode</Label>
+                    <Label htmlFor="theme-toggle" className="text-base">Theme</Label>
                     <p className="text-sm text-muted-foreground">
-                      Switch between light and dark themes
+                      Choose between light, dark, or system theme
                     </p>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Sun className="h-4 w-4" />
-                    <Switch id="theme-toggle" />
-                    <Moon className="h-4 w-4" />
-                  </div>
+                  <Select value={theme} onValueChange={(value) => setTheme(value as "light" | "dark" | "system")}>
+                    <SelectTrigger className="w-32">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="light" className="flex items-center">
+                        <Sun className="mr-2 h-4 w-4" />
+                        <span>Light</span>
+                      </SelectItem>
+                      <SelectItem value="dark">
+                        <div className="flex items-center">
+                          <Moon className="mr-2 h-4 w-4" />
+                          <span>Dark</span>
+                        </div>
+                      </SelectItem>
+                      <SelectItem value="system">
+                        <div className="flex items-center">
+                          <Monitor className="mr-2 h-4 w-4" />
+                          <span>System</span>
+                        </div>
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 
                 <div className="pt-4 border-t border-border space-y-4">
