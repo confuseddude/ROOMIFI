@@ -12,6 +12,7 @@ import RemindersPage from "./pages/Reminders";
 import RoommatesPage from "./pages/Roommates";
 import SettingsPage from "./pages/Settings";
 import NotFound from "./pages/NotFound";
+import AuthPage from "./pages/Auth";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
+            <Route path="/login" element={<AuthPage />} />
             <Route path="/" element={<Index />} />
             <Route path="/expenses" element={<ExpensesPage />} />
             <Route path="/chores" element={<ChoresPage />} />
