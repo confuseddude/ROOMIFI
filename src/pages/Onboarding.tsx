@@ -29,7 +29,7 @@ const OnboardingPage = () => {
       avatar: "",
     },
     household: {
-      type: "create",
+      type: "create" as "create" | "join",
       name: "",
       inviteCode: "",
     },
