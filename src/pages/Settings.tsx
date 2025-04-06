@@ -1,3 +1,4 @@
+
 import React from "react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import { 
   Bell, 
   LogOut, 
@@ -14,7 +16,13 @@ import {
   Sun, 
   User, 
   UserCircle,
-  Monitor
+  Monitor,
+  Users,
+  MoreVertical,
+  CreditCard,
+  ClipboardCheck,
+  PlusCircle,
+  UserPlus
 } from "lucide-react";
 import {
   Select,
@@ -29,6 +37,12 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu";
 import { useTheme } from "@/components/theme/ThemeProvider";
 
 const SettingsPage = () => {

@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Home, Receipt, ClipboardCheck, MessageCircle, Users, Settings } from "lucide-react";
+import { Home, Receipt, ClipboardCheck, MessageCircle, Settings } from "lucide-react";
 
 export const MobileNav = () => {
   const location = useLocation();
@@ -28,9 +28,9 @@ export const MobileNav = () => {
       path: "/reminders",
     },
     {
-      name: "Roommates",
-      icon: Users,
-      path: "/roommates",
+      name: "Settings",
+      icon: Settings,
+      path: "/settings",
     },
   ];
 

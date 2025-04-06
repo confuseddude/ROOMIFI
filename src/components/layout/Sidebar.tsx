@@ -1,7 +1,6 @@
-
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Home, Receipt, ClipboardCheck, MessageCircle, Users, Settings } from "lucide-react";
+import { Home, Receipt, ClipboardCheck, MessageCircle, Settings } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 export const Sidebar = () => {
@@ -25,11 +24,6 @@ export const Sidebar = () => {
       name: "Reminders",
       icon: MessageCircle,
       path: "/reminders",
-    },
-    {
-      name: "Roommates",
-      icon: Users, 
-      path: "/roommates",
     },
     {
       name: "Settings",

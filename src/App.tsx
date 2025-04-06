@@ -10,7 +10,6 @@ import ExpensesPage from "./pages/Expenses";
 import ExpensesGraphPage from "./pages/ExpensesGraph";
 import ChoresPage from "./pages/Chores";
 import RemindersPage from "./pages/Reminders";
-import RoommatesPage from "./pages/Roommates";
 import SettingsPage from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import AuthPage from "./pages/Auth";
@@ -33,7 +32,6 @@ const App = () => (
             <Route path="/expenses/graph" element={<ExpensesGraphPage />} />
             <Route path="/chores" element={<ChoresPage />} />
             <Route path="/reminders" element={<RemindersPage />} />
-            <Route path="/roommates" element={<RoommatesPage />} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
