@@ -14,6 +14,7 @@ import RoommatesPage from "./pages/Roommates";
 import SettingsPage from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import AuthPage from "./pages/Auth";
+import OnboardingPage from "./pages/Onboarding";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/login" element={<AuthPage />} />
+            <Route path="/onboarding" element={<OnboardingPage />} />
             <Route path="/" element={<Index />} />
             <Route path="/expenses" element={<ExpensesPage />} />
             <Route path="/expenses/graph" element={<ExpensesGraphPage />} />
