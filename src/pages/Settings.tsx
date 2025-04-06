@@ -1,4 +1,3 @@
-
 import React from "react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -54,10 +53,14 @@ const SettingsPage = () => {
         <h1 className="text-2xl font-bold">Settings</h1>
 
         <Tabs defaultValue="profile">
-          <TabsList className="grid w-full grid-cols-3 md:w-auto md:inline-flex">
+          <TabsList className="grid w-full grid-cols-4 md:w-auto md:inline-flex">
             <TabsTrigger value="profile">
               <User className="h-4 w-4 mr-2" />
               Profile
+            </TabsTrigger>
+            <TabsTrigger value="roommates">
+              <Users className="h-4 w-4 mr-2" />
+              Roommates
             </TabsTrigger>
             <TabsTrigger value="notifications">
               <Bell className="h-4 w-4 mr-2" />
@@ -156,6 +159,148 @@ const SettingsPage = () => {
                 </div>
                 <div className="flex justify-end">
                   <Button variant="outline">Change Password</Button>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="roommates" className="mt-6">
+            <Card className="mb-6">
+              <CardHeader className="flex flex-row items-center justify-between">
+                <div>
+                  <CardTitle>Household Members</CardTitle>
+                  <CardDescription>
+                    Manage your roommates and household access
+                  </CardDescription>
+                </div>
+                <Button className="bg-brand-purple hover:bg-brand-purple-dark">
+                  <UserPlus className="mr-2 h-4 w-4" />
+                  Invite
+                </Button>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between border-b pb-4">
+                      <div className="flex items-center gap-3">
+                        <Avatar>
+                          <AvatarFallback className="bg-brand-purple-light text-brand-purple-dark">
+                            RA
+                          </AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <p className="font-medium">Rahul Agarwal</p>
+                          <p className="text-sm text-muted-foreground">rahul@example.com</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Badge>Admin</Badge>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="icon">
+                              <MoreVertical className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end">
+                            <DropdownMenuItem>Change Role</DropdownMenuItem>
+                            <DropdownMenuItem className="text-destructive">Remove</DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between border-b pb-4">
+                      <div className="flex items-center gap-3">
+                        <Avatar>
+                          <AvatarFallback className="bg-green-100 text-green-700">PR</AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <p className="font-medium">Priya Reddy</p>
+                          <p className="text-sm text-muted-foreground">priya@example.com</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Badge variant="outline">Member</Badge>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="icon">
+                              <MoreVertical className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end">
+                            <DropdownMenuItem>Change Role</DropdownMenuItem>
+                            <DropdownMenuItem className="text-destructive">Remove</DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <Avatar>
+                          <AvatarFallback className="bg-blue-100 text-blue-700">SK</AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <p className="font-medium">Sanjay Kumar</p>
+                          <p className="text-sm text-muted-foreground">sanjay@example.com</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Badge variant="outline">Member</Badge>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="icon">
+                              <MoreVertical className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end">
+                            <DropdownMenuItem>Change Role</DropdownMenuItem>
+                            <DropdownMenuItem className="text-destructive">Remove</DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardHeader>
+                <CardTitle>Household Settings</CardTitle>
+                <CardDescription>
+                  Manage your household information
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="household-name">Household Name</Label>
+                  <Input id="household-name" defaultValue="Sunshine Apartments #304" />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="household-address">Address</Label>
+                  <Input id="household-address" defaultValue="304 Sunshine Apartments, Koramangala, Bangalore" />
+                </div>
+                
+                <div className="flex items-center justify-between pt-4">
+                  <div>
+                    <h3 className="text-base font-medium">Transfer Ownership</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Transfer the household to another member
+                    </p>
+                  </div>
+                  <Button variant="outline">Transfer</Button>
+                </div>
+                
+                <div className="flex items-center justify-between pt-4 border-t border-border">
+                  <div>
+                    <h3 className="text-base font-medium text-destructive">Leave Household</h3>
+                    <p className="text-sm text-muted-foreground">
+                      You will lose access to all household data
+                    </p>
+                  </div>
+                  <Button variant="outline" className="text-destructive">Leave</Button>
                 </div>
               </CardContent>
             </Card>
