@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import Index from "./pages/Index";
 import ExpensesPage from "./pages/Expenses";
+import ExpensesGraphPage from "./pages/ExpensesGraph";
 import ChoresPage from "./pages/Chores";
 import RemindersPage from "./pages/Reminders";
 import RoommatesPage from "./pages/Roommates";
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/login" element={<AuthPage />} />
             <Route path="/" element={<Index />} />
             <Route path="/expenses" element={<ExpensesPage />} />
+            <Route path="/expenses/graph" element={<ExpensesGraphPage />} />
             <Route path="/chores" element={<ChoresPage />} />
             <Route path="/reminders" element={<RemindersPage />} />
             <Route path="/roommates" element={<RoommatesPage />} />

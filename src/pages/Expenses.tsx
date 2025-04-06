@@ -4,7 +4,7 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Plus, Filter, Receipt } from "lucide-react";
+import { Plus, Filter, Receipt, BarChart } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Link } from "react-router-dom";
@@ -84,11 +84,18 @@ const ExpensesPage = () => {
       <div className="space-y-6">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold">Expenses</h1>
-          <Link to="/expenses/add">
-            <Button className="bg-brand-purple hover:bg-brand-purple-dark">
-              <Plus className="mr-2 h-4 w-4" /> Add Expense
-            </Button>
-          </Link>
+          <div className="flex gap-2">
+            <Link to="/expenses/graph">
+              <Button variant="outline">
+                <BarChart className="mr-2 h-4 w-4" /> Analytics
+              </Button>
+            </Link>
+            <Link to="/expenses/add">
+              <Button className="bg-brand-purple hover:bg-brand-purple-dark">
+                <Plus className="mr-2 h-4 w-4" /> Add Expense
+              </Button>
+            </Link>
+          </div>
         </div>
         
         <Tabs defaultValue="all" className="w-full">
