@@ -77,6 +77,32 @@ VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
+### 🔐 Google OAuth Setup
+
+To enable Google OAuth authentication:
+
+1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project or select an existing one
+3. Navigate to "APIs & Services" > "Credentials"
+4. Click "Create Credentials" and select "OAuth client ID"
+5. Configure the OAuth consent screen:
+   - Add your application name and logo
+   - Add your support email
+   - Add authorized domains (your domain and `supabase.co`)
+6. In the OAuth client ID creation:
+   - Select "Web application" as the application type
+   - Add authorized redirect URIs:
+     - `https://[YOUR_PROJECT_REF].supabase.co/auth/v1/callback`
+     - `http://localhost:5173/auth/callback` (for local development)
+7. Copy the Client ID and Client Secret
+8. In your Supabase project dashboard:
+   - Go to Authentication > Providers
+   - Enable Google OAuth
+   - Add your Google Client ID and Client Secret
+   - Add the authorized redirect URL: `https://[YOUR_PROJECT_REF].supabase.co/auth/v1/callback`
+
+> **Note:** Replace `[YOUR_PROJECT_REF]` with your actual Supabase project reference ID.
+
 ## 📱 Key Features Implementation
 
 - **Page Transitions**: Smooth 2-second transitions between pages with loading animations
@@ -98,3 +124,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
 - [Supabase](https://supabase.com/) for authentication and backend services
 - [Framer Motion](https://www.framer.com/motion/) for smooth animations
+
+Made In Collaboration with:-
+-Sarwan Nandh
+-Anshuman Jaiswal 
+-Anirudh Krishnan 
