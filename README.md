@@ -125,7 +125,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Supabase](https://supabase.com/) for authentication and backend services
 - [Framer Motion](https://www.framer.com/motion/) for smooth animations
 
-Made In Collaboration with:-
+Made by the Infinity Coders:-
+-Adwait Panigrahi
 -Sarwan Nandh
 -Anshuman Jaiswal 
 -Anirudh Krishnan 
